@@ -247,19 +247,47 @@ exporter.save_density_tiff(
 
 5. **Synthetic Terrain Validation**: Use `TestSuite.create_test_cases()` to validate new algorithms before applying to real Mars data.
 
+## Figure 4 Reproduction Status (Primary Active Goal)
+
+The main open research goal is reproducing Figure 4 from Zúñiga-Galindo et al. (2023) (`references/ptad061.pdf`).
+
+### What Figure 4 Shows
+Left panel: all 3⁶=729 p-adic integers embedded as a Sierpinski triangle. Each point colored black (foreground pixel) or white (background pixel) from a 27×27 binary source image (MNIST digit "5"). Right panel: the source digit.
+
+### What We Know (Confirmed)
+- **The embedding works**: `embed_padic_cloud` with p=3, l=6, m=0, s=0.46 produces a clean Sierpinski triangle with uniform nearest-neighbor distances (std≈0, confirmed isometry).
+- **s₀ = 0.4641** for p=3 (formula: sin(π/3)/(1+sin(π/3)) ≈ √3/(2+√3)). Earlier docs incorrectly stated 0.2679 — that was an arithmetic error (dropped the √3 numerator). Fixed in `CHISTYAKOV_ALGORITHM_REFERENCE.md`.
+- **s=0.46 is correct**: the paper's stated value for the Sierpinski triangle, just below s₀=0.4641.
+- **Prior scattered appearance was a visualization artifact**: an earlier notebook (19) used a 50/50 random noise image as source, making all 729 colored points look undifferentiated. The embedding itself was correct.
+- **Coordinate mapping**: pixel (i,j) → p-adic int via interleaved base-3 digits works and produces a bijection over {0..728}. The interleaving order (j-first: j₀,i₀,j₁,i₁,...) affects which digit shape is readable inside the Sierpinski, but not the triangle geometry.
+
+### Definitive Notebook
+`notebooks/20_figure4_definitive.ipynb` — run this next. It uses:
+- p=3, l=6, m=0, s=0.46
+- MNIST digit "5" downsampled to 27×27
+- Correct layout: Sierpinski LEFT, digit RIGHT
+- Validation cell checking NN uniformity and comparing against `references/ptad061fig4.jpeg`
+
+### Remaining Open Questions
+1. **Coordinate mapping vs. paper**: The paper may specify a particular (i,j)→p-adic encoding. The current j-first interleaving produces a valid Sierpinski but may rotate/reflect the digit inside the triangle compared to the paper. Investigate by looking at what Figure 4 in the paper shows for the digit shape within the Sierpinski.
+2. **Exact source image**: The paper uses a specific binary "5" image (not from MNIST). Close enough for validation, but worth finding the exact image if the paper describes it.
+3. **Connect to terrain pipeline**: The p-adic embedding module (`padic_embedding.py`) is currently used only for digit/image visualization. The logical next step is embedding terrain patches (e.g., from the Jezero DEM quadtree nodes) in Sierpinski space to study their fractal geometry.
+
 ## Next Steps for Future Claude Instances
 
-When working on this project:
+1. **Run notebook 20** (`20_figure4_definitive.ipynb`) in the `padic-fractal-analysis` conda env — this is the first thing to do.
+2. **Compare output against paper figure** (`references/ptad061fig4.jpeg`) and assess whether the digit shape within the Sierpinski matches.
+3. **Investigate coordinate mapping** if the digit orientation doesn't match the paper (try i-first interleaving vs. j-first, or check if the paper specifies the encoding).
+4. **Terrain embedding**: once Figure 4 is confirmed, apply the same embedding to terrain patches from the Jezero DEM (cached at `cache/dem_clean.npy`).
+5. **Run Gale crater validation** — the full Jezero pipeline exists; Gale crater comparison is the next scientific milestone.
 
-1. **Check implementation status** - Review completed modules listed above
-2. **Load Mars data** - Use `preprocessing.load_dem()` with actual GeoTIFF files from `/data/`
-3. **Test on synthetic cases** - Start with `synthetic_terrain.TestSuite` before Mars data
-4. **Implement validation pipelines** - Next phase: Jezero and Gale crater validation (marked pending in todo list)
-5. **Create analysis notebooks** - Jupyter notebooks demonstrating the full workflow
-6. **Profile performance** - Use Python profiler to optimize bottlenecks
-7. **Integrate GPU acceleration** - Optional: add CUDA support via CuPy for large datasets
+## Environment
+
+Run notebooks with: `conda activate padic-fractal-analysis`
+
+The base anaconda Python has a broken scipy (BLAS/libgfortran issue on macOS). Always use the `padic-fractal-analysis` conda env.
 
 ---
 
-**Last Updated**: 2025-11-22
-**Implementation Level**: Core infrastructure complete, validation pipelines pending
+**Last Updated**: 2026-04-02
+**Implementation Level**: Core infrastructure complete. Figure 4 embedding confirmed working; definitive notebook written, needs execution and comparison against paper.

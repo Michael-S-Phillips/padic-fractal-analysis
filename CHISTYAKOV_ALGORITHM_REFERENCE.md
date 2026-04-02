@@ -70,7 +70,8 @@ s_0 = sin(π/3) / (1 + sin(π/3))
     = (√3/2) / (1 + √3/2)
     = (√3/2) / ((2 + √3)/2)
     = √3 / (2 + √3)
-    ≈ 0.2679
+    ≈ 1.732 / 3.732
+    ≈ 0.4641
 ```
 
 **CRITICAL**: This constraint MUST be satisfied for proper Sierpinski hierarchical structure.
@@ -236,8 +237,8 @@ Figure 1 shows 12 different embeddings with parameters:
 Based on the paper's examples and theory:
 
 For **p=3, l=6** (complete 729-point space):
-- **s_0 = 0.2679**
-- **Recommended |s| = 0.9 * s_0 ≈ 0.2411**
+- **s_0 = 0.4641**
+- **Recommended |s| = 0.9 * s_0 ≈ 0.4177** (but paper uses s=0.46 directly)
 - **Recommended arg(s) = 2π/3 = 120°** (for triangular symmetry)
 - **Recommended m = l = 6** (full depth truncation)
 
@@ -255,7 +256,7 @@ If you're seeing **dispersed points** instead of Sierpinski triangles, check:
 
 1. **Parameter Constraint Violation**:
    - Is |s| ≥ s_0? → **BUG** (violates Theorem 6)
-   - Solution: |s| < 0.268 for p=3
+   - Solution: |s| < 0.4641 for p=3 (empirically, s=0.46 from paper works fine)
 
 2. **Missing Complex Rotation**:
    - Is s purely real? → **Missing symmetry**
@@ -284,7 +285,7 @@ If you're seeing **dispersed points** instead of Sierpinski triangles, check:
 ✓ Algorithm matches Chistyakov equation (15) exactly
 ✓ Additive character implements equation (14) correctly
 ✓ Parameter constraint: |s| < s_0 = sin(π/p)/(1+sin(π/p))
-✓ For p=3: |s| < 0.2679
+✓ For p=3: |s| < 0.4641 (paper uses s=0.46 for Sierpinski triangle)
 ✓ Complex rotation: arg(s) = 2π/p for symmetry
 ✓ Valuation finds first nonzero digit position
 ✓ Base term: (1-s^v)/(1-s) included
