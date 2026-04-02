@@ -119,6 +119,18 @@ temp/
 # Cache
 .cache/
 *.cache
+cache/
+
+# Image files (generated outputs — keep paper figures)
+*.png
+*.jpg
+*.jpeg
+!notebooks/figure4_*.png
+!references/*.jpeg
+!references/*.jpg
+
+# Large report PDFs
+initial_reports_volume4*.pdf
 
 # Profiling
 prof_data/
