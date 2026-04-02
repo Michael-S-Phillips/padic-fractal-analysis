@@ -1,0 +1,39 @@
+
+Mars 2020 Samples Analysis - Interpretation Guide
+
+The Mars 2020 Perseverance rover collected 4 samples in the Margin campaign 
+from the Western Delta region of Jezero crater:
+
+1. PELICAN POINT (M2020-923-25)
+   - Sandstone from Mandu Wall
+   - Sol 923 (Sept 2023)
+   - Higher complexity expected: Located on delta margin scarp
+   - Expected density: HIGH (complex terrain, scarp features)
+
+2. LEFROY BAY (M2020-949-26)
+   - Sandstone from Turquoise Bay
+   - Sol 949 (Oct 2023)
+   - Expected complexity: MEDIUM-HIGH (transition zone)
+   - Expected density: MEDIUM-HIGH
+
+3. COMET GEYSER (M2020-1088-27)
+   - Coarse sandstone/altered igneous rock from Western Margin
+   - Sol 1088 (Mar 2024)
+   - Scientific interest: Impact-related materials
+   - Expected density: HIGH (complex geology)
+
+4. SAPPHIRE CANYON (M2020-1215-28)
+   - Fine-grained silicate with calcium sulfate from Bright Angel
+   - Sol 1215 (Jul 2024)
+   - Scientific importance: Aqueous alteration minerals
+   - Expected density: HIGH (complex mineral composition)
+
+Key Question for Validation:
+"Does the fractal density algorithm correctly identify that these 
+selected sample locations are in geologically complex regions?"
+
+Success Criteria:
+✓ Sample locations should generally be in HIGH or MEDIUM-HIGH density areas
+✓ Should avoid low-complexity smooth terrain
+✓ Patterns should match geological interpretations
+✓ High-complexity identification should correlate with scientific significance

@@ -1,0 +1,76 @@
+{
+  "l=4": {
+    "scale_info": {
+      "l": 4,
+      "n_regions": 81,
+      "grid_size": 9
+    },
+    "clustering": {
+      "mean_nn_distance": 0.08534146734961758,
+      "median_nn_distance": 0.0,
+      "std_nn_distance": 0.1236376920955569,
+      "max_nn_distance": 0.4330126941204071,
+      "min_nn_distance": 0.0,
+      "mean_all_pairwise_distance": 1.4577324312272264
+    },
+    "spreading": {
+      "embedding_bbox_width": 2.8125,
+      "embedding_bbox_height": 3.2475953102111816,
+      "embedding_span": 4.2961647488086
+    },
+    "sierpinski_properties": {
+      "density_mean": 74077.1376163722,
+      "density_std": 261890.53394109456,
+      "density_cv": 3.5353759927094877,
+      "local_clustering_tendency": 3.535375992757213
+    },
+    "elevation_embedding_correlation": {
+      "pearson_real": -0.31902608440808233,
+      "pearson_imag": -0.09509627912275159,
+      "distance_matrix_correlation": 0.08677123189386997,
+      "interpretation": "Low correlations suggest elevation maps to complex structure rather than simple linear relationship"
+    },
+    "complexity": {
+      "elevation_entropy": 2.9036840891418105,
+      "embedding_spatial_entropy": 4.747137271366659,
+      "embedding_uniformity": 0.041794871307627934
+    }
+  },
+  "l=6": {
+    "scale_info": {
+      "l": 6,
+      "n_regions": 729,
+      "grid_size": 27
+    },
+    "clustering": {
+      "mean_nn_distance": 0.015496449118329337,
+      "median_nn_distance": 0.0,
+      "std_nn_distance": 0.026839286581272315,
+      "max_nn_distance": 0.10825319588184357,
+      "min_nn_distance": 0.0,
+      "mean_all_pairwise_distance": 1.4723617270683833
+    },
+    "spreading": {
+      "embedding_bbox_width": 2.953125,
+      "embedding_bbox_height": 3.409975051879883,
+      "embedding_span": 4.510972968226279
+    },
+    "sierpinski_properties": {
+      "density_mean": 179708.89341178953,
+      "density_std": 383930.89289394266,
+      "density_cv": 2.136404524021286,
+      "local_clustering_tendency": 2.1364045240331744
+    },
+    "elevation_embedding_correlation": {
+      "pearson_real": -0.05141301840416617,
+      "pearson_imag": 0.008049400339804821,
+      "distance_matrix_correlation": 0.010372430020173072,
+      "interpretation": "Low correlations suggest elevation maps to complex structure rather than simple linear relationship"
+    },
+    "complexity": {
+      "elevation_entropy": 2.8191480443212416,
+      "embedding_spatial_entropy": 7.452091505382631,
+      "embedding_uniformity": 0.03312011146796279
+    }
+  }
+}

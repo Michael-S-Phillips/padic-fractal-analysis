@@ -1,0 +1,42 @@
+{
+  "baseline": {
+    "mean": -2356.86962890625,
+    "std": 267.7530517578125,
+    "min": -2710.69580078125,
+    "max": -1515.53955078125,
+    "median": -2445.04296875,
+    "entropy": 3.47802623987808
+  },
+  "by_level": {
+    "4": {
+      "level": 4,
+      "num_regions": 81,
+      "num_nonempty": 81,
+      "avg_pixels_per_region": 29792.0,
+      "mean_ks_distance": 0.8069381845102012,
+      "std_ks_distance": 0.17083464807361984,
+      "mean_entropy": 3.8964733481540916,
+      "std_entropy": 0.04374008339214452
+    },
+    "5": {
+      "level": 5,
+      "num_regions": 243,
+      "num_nonempty": 243,
+      "avg_pixels_per_region": 9930.666666666666,
+      "mean_ks_distance": 0.809561557056903,
+      "std_ks_distance": 0.1691260263064743,
+      "mean_entropy": 3.892421232700336,
+      "std_entropy": 0.06914286514304571
+    },
+    "6": {
+      "level": 6,
+      "num_regions": 729,
+      "num_nonempty": 729,
+      "avg_pixels_per_region": 3310.222222222222,
+      "mean_ks_distance": 0.8104220206146403,
+      "std_ks_distance": 0.1685661792425259,
+      "mean_entropy": 3.8628945101570937,
+      "std_entropy": 0.12751372149644707
+    }
+  }
+}

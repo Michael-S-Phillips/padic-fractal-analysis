@@ -1,0 +1,5 @@
+sample_id,name,latitude,longitude,elevation,sol,date,campaign,roi,lithology,geometry
+M2020-923-25,Pelican Point,18.48344692,77.35065098,-2423.102833,923,2023-09-23,Margin,Mandu Wall,Moderately to poorly sorted medium to coarse grained sandstone,
+M2020-949-26,Lefroy Bay,18.48867278,77.34704595,-2407.641882,949,2023-10-13,Margin,Turquoise Bay,Moderately to poorly sorted medium to coarse grained sandstone,
+M2020-1088-27,Comet Geyser,18.49186664,77.3272192,-2382.434036,1088,2024-03-11,Margin,Western Margin,Moderately to poorly sorted coarse sandstone or altered igneous rock,
+M2020-1215-28,Sapphire Canyon,18.49747434,77.30514915,-2354.235808,1215,2024-07-21,Margin,Bright Angel,Fine-grained silicate rock with abundant calcium sulfate veins,

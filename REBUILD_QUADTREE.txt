@@ -1,0 +1,82 @@
+================================================================================
+                         QUADTREE BUG FIX
+                  REBUILD INSTRUCTIONS
+================================================================================
+
+WHAT WAS WRONG:
+---------------
+The quadtree building code had 3 critical bugs:
+1. Bounds were hardcoded to 2×2 instead of aggregating children
+2. Variance was computed on means instead of actual data
+3. Min/max weren't properly aggregated
+
+Result: Broken tree with NaN values and tiny bounds
+
+WHAT WAS FIXED:
+---------------
+✓ Bounds now properly computed from children spatial extents
+✓ Variance now uses law of total variance (correct statistics)
+✓ Min/max now properly aggregated from all children
+✓ Tree structure completely corrected
+
+FILE CHANGED:
+-----------
+src/padic/quadtree.py (lines 140-211)
+
+HOW TO REBUILD:
+---------------
+Step 1: Delete old broken cache
+    rm /Volumes/Fangorn/padic_fractal_analysis/cache/*
+
+Step 2: Rebuild with fixed code
+    jupyter notebook notebooks/06_quadtree_build_inspect_visualize.ipynb
+
+Step 3: Execute all cells
+    - Cell 1: Imports
+    - Cell 2: Build/load quadtree (will rebuild)
+    - Cell 3: Inspect structure (verify it's correct now!)
+    - Cells 4-7: Visualizations
+
+WHAT TO EXPECT:
+---------------
+After rebuilding, inspection output should show:
+
+Root Node:
+  Level: 0 (was 11, now correct!)
+  Bounds: (0, 1512, 0, 1596) (was 0,2,0,2 - now covers full DEM!)
+  Num pixels: 4194304
+  Elevation variance: [valid number, not NaN!]
+
+Level Distribution:
+  Level 0: 4194304 nodes, variance: [values]
+  Level 1: 1048576 nodes, variance: [values]
+  Level 2: 262144 nodes, variance: [values]
+  ...
+  (All with proper numeric variance values, no NaN!)
+
+ESTIMATED TIME:
+---------------
+First build: 10-15 minutes (rebuilds quadtree)
+Subsequent: 3-5 minutes (uses cache)
+
+VISUALIZATION:
+--------------
+After rebuilding, visualizations should:
+✓ Show clear Sierpinski-like point cloud
+✓ Have proper point distribution
+✓ Reflect actual terrain structure
+✓ Have meaningful density patterns
+
+DO THIS NOW:
+-----------
+1. Delete cache:
+   rm /Volumes/Fangorn/padic_fractal_analysis/cache/*
+
+2. Run notebook:
+   jupyter notebook notebooks/06_quadtree_build_inspect_visualize.ipynb
+
+3. Check results after Cell 3 inspection output
+
+For details: See QUADTREE_BUG_FIX.md
+
+================================================================================

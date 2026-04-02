@@ -1,0 +1,60 @@
+================================================================================
+                    P-ADIC QUADTREE VISUALIZATION
+                         QUICK START GUIDE
+================================================================================
+
+WHAT TO DO:
+-----------
+Run this command:
+
+    jupyter notebook notebooks/06_quadtree_build_inspect_visualize.ipynb
+
+Then execute all cells from top to bottom.
+
+WHAT YOU GET:
+-----------
+1. padic_sierpinski_v2.png
+   - Sierpinski-like point cloud visualization
+   - Shows p-adic hierarchical decomposition
+   - Matches reference paper format
+
+2. padic_progressive_v2.png
+   - Shows detail increase across 6 levels
+   - Demonstrates fractal refinement
+
+3. padic_comparison_v2.png
+   - 6-panel comprehensive view
+   - Includes original DEM + variance maps
+
+BENEFITS:
+---------
+✓ Quadtree is cached (fast after first run)
+✓ Full inspection of tree structure
+✓ Multiple visualization styles
+✓ Python scripts + notebook options
+✓ Comprehensive documentation
+
+EXPECTED TIME:
+-----------
+First run: 10-15 minutes (builds + caches quadtree)
+Subsequent: 3-5 minutes (uses cache)
+
+IF STUCK:
+---------
+1. Check: PADIC_VISUALIZATION_WORKFLOW.md (troubleshooting section)
+2. Check: SESSION_SUMMARY.md (overview and details)
+3. Check: README_VISUALIZATION.md (quick reference)
+
+WHAT THE VISUALIZATION SHOWS:
+-----------
+- Each point: center of a quadtree node
+- Position: row/column in normalized [0,1] space
+- Density: reflects terrain complexity
+- Pattern: p-adic hierarchical structure
+- Result: Sierpinski-like fractal appearance
+
+READY? Run this:
+
+    jupyter notebook notebooks/06_quadtree_build_inspect_visualize.ipynb
+
+================================================================================

@@ -1,0 +1,40 @@
+
+FRACTALITY-EMBEDDING ANALYSIS SUMMARY
+=====================================
+
+Key Findings:
+
+1. ELEVATION MAPPING:
+   - l=4: Weak negative correlation with real component (-0.319)
+   - l=6: Minimal correlation (-0.051, 0.008)
+   → Elevation does NOT map linearly to embedding coordinates
+   → Suggests complex hierarchical organization in p-adic space
+
+2. HIERARCHICAL STRUCTURE:
+   - l=4: High density CV (3.54) indicates strong clustering at coarse scale
+   - l=6: Lower density CV (2.14) indicates more uniform distribution at fine scale
+   → Sierpinski structure creates multi-scale organization
+   → Scale-dependent complexity decreases from l=4 to l=6
+
+3. SELF-SIMILARITY:
+   - NN distance scaling: 0.1816 (< 1)
+   → When scaling from l=4 to l=6 (9x more regions), 
+     nearest-neighbor distances decrease by ~5.5x
+   → Indicates fractal scaling behavior
+
+4. EMBEDDING GEOMETRY:
+   - Distance matrix correlation: 0.087 (l=4), 0.010 (l=6)
+   → Elevation distances poorly predicted by embedding distances
+   → P-adic structure captures different organizational patterns than elevation
+
+5. SPATIAL ORGANIZATION:
+   - Elevation extremes may cluster in embedding space due to:
+     * Terrain basins/peaks creating localized regions
+     * P-adic structure not biased toward elevation ordering
+     * Sierpinski hierarchy capturing topographic complexity
+
+INTERPRETATION:
+The p-adic embedding reveals that terrain complexity manifests as:
+- Hierarchical clustering rather than continuous variation
+- Multi-scale organization independent of elevation gradients
+- Sierpinski-like structure capturing natural terrain regionalization
